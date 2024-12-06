@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Domain.Identity.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -11,7 +12,7 @@ namespace Infastructure.Identity.DatabaseContext
 {
     public class IdentityDataBaseContext:IdentityDbContext
     {
-        public IdentityDataBaseContext(DbContextOptions<IdentityDataBaseContext> options)
+        public IdentityDataBaseContext(DbContextOptions<IdentityDataBaseContext> options):base(options)
         {
             
         }
@@ -20,7 +21,7 @@ namespace Infastructure.Identity.DatabaseContext
             base.OnModelCreating(builder); //Remember to add this
             #region Custom UserManagement
             builder.HasDefaultSchema("Identity");
-            builder.Entity<IdentityUser>(entity =>
+            builder.Entity<ApplicationUser>(entity =>
             {
                 entity.ToTable(name: "User");
             });

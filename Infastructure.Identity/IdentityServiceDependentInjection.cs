@@ -1,4 +1,5 @@
-﻿using Infastructure.Identity.DatabaseContext;
+﻿using Domain.Identity.Entities;
+using Infastructure.Identity.DatabaseContext;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -26,6 +27,8 @@ namespace Infastructure.Identity
             //https://devblogs.microsoft.com/dotnet/whats-new-with-identity-in-dotnet-8/
             services.AddIdentityCore<IdentityUser>()
                 .AddEntityFrameworkStores<IdentityDataBaseContext>();
+            
+//    .AddEntityFrameworkStores<ApplicationDbContext>();
             //.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true);
             services.Configure<IdentityOptions>(options =>
             {
@@ -36,6 +39,7 @@ namespace Infastructure.Identity
                 options.Password.RequireDigit = false;
                 options.Password.RequiredLength = 7;
             });
+            
 
         }
 
