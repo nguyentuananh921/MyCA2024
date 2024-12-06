@@ -1,19 +1,27 @@
 using Microsoft.AspNetCore.Identity;
+using Infastructure.Identity;
 using Microsoft.EntityFrameworkCore;
 using WebMVC.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("MyCA-Identity") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));
-
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+#region Add Service to Other Layer
+#region Infastructure Identity
+//Add DBContext
+builder.Services.AddIdentityDbContext(builder.Configuration);
+//var connectionString = builder.Configuration.GetConnectionString("MyCA-Identity");
+//builder.Services.AddDbContext<ApplicationDbContext>(options =>
+//    options.UseSqlServer(connectionString));
+builder.Services.AddIdentityConfig();
+//builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+//    .AddEntityFrameworkStores<ApplicationDbContext>();
+#endregion
+#endregion
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

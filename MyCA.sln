@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebMVC", "WebMVC\WebMVC.csproj", "{E2EFA160-82DA-4CEA-AA66-9C3D7CE489B3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infastructure", "Infastructure", "{F3FCD1C5-D60B-41A0-A539-6DD2ADC94BD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infastructure.Identity", "Infastructure.Identity\Infastructure.Identity.csproj", "{BC7EB6FD-2977-4E75-B058-2F51D6558134}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +21,17 @@ Global
 		{E2EFA160-82DA-4CEA-AA66-9C3D7CE489B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2EFA160-82DA-4CEA-AA66-9C3D7CE489B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2EFA160-82DA-4CEA-AA66-9C3D7CE489B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC7EB6FD-2977-4E75-B058-2F51D6558134}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC7EB6FD-2977-4E75-B058-2F51D6558134}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC7EB6FD-2977-4E75-B058-2F51D6558134}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC7EB6FD-2977-4E75-B058-2F51D6558134}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E2EFA160-82DA-4CEA-AA66-9C3D7CE489B3} = {AAEF5EF1-DF42-414C-85D1-44BD5DBABA4D}
+		{BC7EB6FD-2977-4E75-B058-2F51D6558134} = {F3FCD1C5-D60B-41A0-A539-6DD2ADC94BD8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B3BC4A4E-A0F3-4B14-B9B0-ECD9C9F28227}
