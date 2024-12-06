@@ -25,9 +25,11 @@ namespace Infastructure.Identity
         public static void AddIdentityConfig(this IServiceCollection services)
         {
             //https://devblogs.microsoft.com/dotnet/whats-new-with-identity-in-dotnet-8/
-            services.AddIdentityCore<IdentityUser>()
+            //https://medium.com/@xsoheilalizadeh/asp-net-core-identity-deep-dive-stores-e0e54291b51d
+            //services.AddIdentityCore<IdentityUser>()
+            //    .AddEntityFrameworkStores<IdentityDataBaseContext>();
+            services.AddDefaultIdentity<IdentityUser>()  //Remember to Add Microsoft.AspNetCore.Identity.UI
                 .AddEntityFrameworkStores<IdentityDataBaseContext>();
-            
 //    .AddEntityFrameworkStores<ApplicationDbContext>();
             //.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true);
             services.Configure<IdentityOptions>(options =>

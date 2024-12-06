@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 #region Add Service to Other Layer
 #region Infastructure Identity
-builder.Services.AddRazorPages(); 
+builder.Services.AddRazorPages();
 //Add DBContext
 builder.Services.AddIdentityDbContext(builder.Configuration);
 //var connectionString = builder.Configuration.GetConnectionString("MyCA-Identity");

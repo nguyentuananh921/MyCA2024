@@ -21,7 +21,7 @@ namespace Infastructure.Identity.DatabaseContext
             base.OnModelCreating(builder); //Remember to add this
             #region Custom UserManagement
             builder.HasDefaultSchema("Identity");
-            builder.Entity<ApplicationUser>(entity =>
+            builder.Entity<IdentityUser>(entity =>
             {
                 entity.ToTable(name: "User");
             });
