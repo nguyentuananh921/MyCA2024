@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Infastructure.Identity.DatabaseContext
 {
-    public class IdentityDataBaseContext:IdentityDbContext
+    public class IdentityDataBaseContext:IdentityDbContext<ApplicationUser>
     {
         public IdentityDataBaseContext(DbContextOptions<IdentityDataBaseContext> options):base(options)
         {
@@ -21,7 +21,7 @@ namespace Infastructure.Identity.DatabaseContext
             base.OnModelCreating(builder); //Remember to add this
             #region Custom UserManagement
             builder.HasDefaultSchema("Identity");
-            builder.Entity<IdentityUser>(entity =>
+            builder.Entity<ApplicationUser>(entity =>
             {
                 entity.ToTable(name: "User");
             });

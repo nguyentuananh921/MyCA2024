@@ -28,7 +28,7 @@ namespace Infastructure.Identity
             //https://medium.com/@xsoheilalizadeh/asp-net-core-identity-deep-dive-stores-e0e54291b51d
             //services.AddIdentityCore<IdentityUser>()
             //    .AddEntityFrameworkStores<IdentityDataBaseContext>();
-            services.AddDefaultIdentity<IdentityUser>()  //Remember to Add Microsoft.AspNetCore.Identity.UI
+            services.AddDefaultIdentity<ApplicationUser>()  //Remember to Add Microsoft.AspNetCore.Identity.UI
                 .AddEntityFrameworkStores<IdentityDataBaseContext>();
 //    .AddEntityFrameworkStores<ApplicationDbContext>();
             //.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true);
